@@ -5,6 +5,7 @@ namespace markhuot\craftdata;
 use Craft;
 use craft\base\Plugin;
 use craft\web\Controller;
+use markhuot\craftdata\attributes\BodyParams;
 use markhuot\craftdata\behaviors\ActionDataBehavior;
 use yii\base\ActionEvent;
 use yii\base\Event;
