@@ -7,6 +7,7 @@ use craft\base\Plugin;
 use craft\web\Controller;
 use markhuot\craftdata\attributes\BodyParams;
 use markhuot\craftdata\behaviors\ActionDataBehavior;
+use markhuot\data\Data as DataBuilder;
 use yii\base\ActionEvent;
 use yii\base\Event;
 
@@ -34,7 +35,7 @@ class Data extends Plugin
 
                 $dataClass = $attrs[0]->newInstance()->dataClass;
                 $bodyParams = $event->sender->request->getBodyParams();
-                $data = (new Data(new $dataClass))
+                $data = (new DataBuilder(new $dataClass))
                     ->fill($bodyParams)
                     ->validate()
                     ->get();
